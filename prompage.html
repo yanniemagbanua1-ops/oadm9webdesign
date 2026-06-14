@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS Office Administration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7;
+            color: #2b6cb0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: pink;
+            color: #2b6cb0;
+            border-radius: 12px;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .card {
+            background: pink;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2b6cb0;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .card p {
+            margin-bottom: 12px;
+            color:#2b6cb0;
+        }
+        .topic-list, .career-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .topic-item, .career-item {
+            background: pink;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2b6cb0;
+        }
+        .topic-item h3, .career-item h3 {
+            font-size: 16px;
+            color: #2c5282;
+            margin-bottom: 4px;
+        }
+        .topic-item p, .career-item p {
+            font-size: 14px;
+            margin: 0;
+            color: #4a5568;
+        }
+        .importance-points {
+            margin-top: 15px;
+        }
+        .point {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        .point-icon {
+            background: #2b6cb0;
+            color: black;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>BS Office Administration</h1>
+        </div>
+
+        <!-- 1. Your Course -->
+        <div class="card">
+            <h2>Your Course</h2>
+            <p>Bachelor of Science in Office Administration is a four-year degree program that equips students with the knowledge and skills needed to manage office operations effectively.</p>
+            <p>The course focuses on administrative procedures, business communication, records management, and office technology. It prepares graduates to handle clerical, supervisory, and managerial tasks in various business settings.</p>
+        </div>
+
+        <!-- 2. Office Administration Topics -->
+        <div class="card">
+            <h2>Office Administration Topics</h2>
+            <p>Subjects covered in the program include:</p>
+            <div class="topic-list">
+                <div class="topic-item">
+                    <h3>Office Management</h3>
+                    <p>Principles of organizing and supervising office operations</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Business Communication</h3>
+                    <p>Professional writing, reports, and correspondence</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Records Management</h3>
+                    <p>Filing systems, document control, and data security</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Office Technology</h3>
+                    <p>MS Office, office equipment, and digital tools</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Accounting Basics</h3>
+                    <p>Bookkeeping, payroll, and budget tracking</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Event Planning</h3>
+                    <p>Coordinating meetings, seminars, and company events</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Importance of Office Administration -->
+        <div class="card">
+            <h2>Importance of Office Administration</h2>
+            <p>Office Administration plays a critical role in every organization:</p>
+            <div class="importance-points">
+                <div class="point">
+                    <div class="point-icon">1</div>
+                    <div>
+                        <strong>Ensures Smooth Operations:</strong> Organizes workflows, schedules, and resources so daily business runs efficiently.
+                    </div>
+                </div>
+                <div class="point">
+                    <div class="point-icon">2</div>
+                    <div>
+                        <strong>Maintains Accurate Records:</strong> Handles important documents, data, and files needed for decision-making and compliance.
+                    </div>
+                </div>
+                <div class="point">
+                    <div class="point-icon">3</div>
+                    <div>
+                        <strong>Supports Communication:</strong> Manages internal and external correspondence, keeping teams and clients connected.
+                    </div>
+                </div>
+                <div class="point">
+                    <div class="point-icon">4</div>
+                    <div>
+                        <strong>Improves Productivity:</strong> Reduces delays and errors through proper planning, coordination, and time management.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Career Opportunities -->
+        <div class="card">
+            <h2>Career Opportunities</h2>
+            <p>Graduates of BS Office Administration can work in various roles such as:</p>
+            <div class="career-list">
+                <div class="career-item">
+                    <h3>Administrative Assistant</h3>
+                    <p>Supports executives with scheduling, correspondence, and office tasks</p>
+                </div>
+                <div class="career-item">
+                    <h3>Office Manager</h3>
+                    <p>Supervises office staff and oversees daily operations</p>
+                </div>
+                <div class="career-item">
+                    <h3>Records Officer</h3>
+                    <p>Manages filing systems and company documents</p>
+                </div>
+                <div class="career-item">
+                    <h3>Executive Secretary</h3>
+                    <p>Provides high-level administrative support to executives</p>
+                </div>
+                <div class="career-item">
+                    <h3>HR Assistant</h3>
+                    <p>Helps with recruitment, payroll, and employee records</p>
+                </div>
+                <div class="career-item">
+                    <h3>Data Encoder</h3>
+                    <p>Inputs and maintains accurate company data and databases</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

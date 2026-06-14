@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CapCut Login & Signup</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#000;
+      color:white;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      width:360px;
+      background:#111;
+      padding:30px;
+      border-radius:18px;
+      box-shadow:0 0 20px rgba(255,255,255,0.1);
+      text-align:center;
+    }
+
+    .logo img{
+      width:120px;
+      margin-bottom:15px;
+    }
+
+    h1{
+      margin-bottom:20px;
+      font-size:30px;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:none;
+      border-radius:8px;
+      background:#222;
+      color:white;
+      font-size:15px;
+      outline:none;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      border:none;
+      border-radius:8px;
+      background:white;
+      color:black;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    button:hover{
+      background:#dcdcdc;
+    }
+
+    .switch{
+      margin-top:15px;
+      font-size:14px;
+      color:#aaa;
+      cursor:pointer;
+    }
+
+    .switch:hover{
+      color:white;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    .message{
+      margin-top:15px;
+      font-size:14px;
+      color:lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- CapCut Logo -->
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/CapCut_logo.png" alt="CapCut Logo">
+    </div>
+
+    <h1>CapCut</h1>
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm">
+
+      <input type="email" id="loginEmail" placeholder="Email">
+
+      <input type="password" id="loginPassword" placeholder="Password">
+
+      <button onclick="login()"><a href="profile.html">Log In</a>
+        
+      </button>
+
+      <div class="switch" onclick="showSignup()">
+        Don't have an account? Sign Up
+      </div>
+
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div id="signupForm" class="hidden">
+
+      <input type="text" id="signupName" placeholder="Full Name">
+
+      <input type="email" id="signupEmail" placeholder="Email">
+
+      <input type="password" id="signupPassword" placeholder="Password">
+
+      <button onclick="signup()">
+        Sign Up
+      </button>
+
+      <div class="switch" onclick="showLogin()">
+        Already have an account? Log In
+      </div>
+
+    </div>
+
+    <!-- Message -->
+    <div class="message" id="message"></div>
+
+  </div>
+
+  <script>
+
+    function showSignup(){
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("signupForm").classList.remove("hidden");
+      document.getElementById("message").innerText = "";
+    }
+
+    function showLogin(){
+      document.getElementById("signupForm").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("message").innerText = "";
+    }
+
+    function signup(){
+
+      let name = document.getElementById("signupName").value;
+      let email = document.getElementById("signupEmail").value;
+      let password = document.getElementById("signupPassword").value;
+
+      if(name && email && password){
+
+        document.getElementById("message").style.color = "lightgreen";
+
+        document.getElementById("message").innerText =
+          "Signup successful!";
+
+      } else {
+
+        document.getElementById("message").style.color = "red";
+
+        document.getElementById("message").innerText =
+          "Please fill all signup fields.";
+
+      }
+    }
+
+    function login(){
+
+      let email = document.getElementById("loginEmail").value;
+      let password = document.getElementById("loginPassword").value;
+
+      if(email && password){
+
+        document.getElementById("message").style.color = "lightgreen";
+
+        document.getElementById("message").innerText =
+          "Login successful!";
+
+      } else {
+
+        document.getElementById("message").style.color = "red";
+
+        document.getElementById("message").innerText =
+          "Please enter email and password.";
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>

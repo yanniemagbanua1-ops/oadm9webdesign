@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Resume</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:palevioletred;
+      padding:40px;
+    }
+
+    .resume{
+      max-width:900px;
+      margin:auto;
+      background:white;
+      display:flex;
+      box-shadow: hotpink;
+      border-radius:12px;
+      overflow:hidden;
+    }
+
+    /* LEFT SIDE */
+    .left{
+      width:45%;
+      background:lightpink;
+      color: black;
+      padding:30px;
+      text-align:center;
+    }
+
+    .profile-img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:5px solid black;
+      object-fit:cover;
+      margin-bottom:25px;
+    }
+
+    .left h2{
+      margin-bottom:10px;
+      font-size:28px;
+    }
+
+    .left p{
+      font-size:14px;
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    .section-title{
+      margin:25px 0 10px;
+      font-size:18px;
+      border-bottom:2px solid black;
+      padding-bottom:5px;
+      text-align:left;
+    }
+
+    .skills li,
+    .contact li{
+      list-style:none;
+      text-align:left;
+      margin:10px 0;
+      font-size:14px;
+    }
+
+    /* RIGHT SIDE */
+    .right{
+      width:65%;
+      padding:40px;
+    }
+
+    .right-section{
+      margin-bottom:30px;
+    }
+
+    .right-section h3{
+      color: lightpink;
+      margin-bottom:15px;
+      font-size:22px;
+      border-left:5px solid white;
+      padding-left:10px;
+    }
+
+    .job{
+      margin-bottom:20px;
+    }
+
+    .job h4{
+      color: lightpink;
+      margin-bottom:5px;
+    }
+
+    .job span{
+      font-size:14px;
+      color:black;
+    }
+
+    .job p{
+      margin-top:8px;
+      line-height:1.6;
+      color:lightpink;
+      font-size:15px;
+    }
+
+    .education{
+      margin-bottom:15px;
+    }
+
+    .education h4{
+      color:lightpink;
+    }
+
+    .education span{
+      color:black;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+      .resume{
+        flex-direction:column;
+      }
+
+      .left,
+      .right{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="resume">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+      <img src="profile.jpg.jpg" width="200"class="profile-pic">
+
+      <h2>Diane Clear Y. Magbanua</h2>
+      <p>Office Administration Student</p>
+
+      <div class="section-title">Contact</div>
+      <ul class="contact">
+        <li>📞 09677462163</li>
+        <li>📧 yanniemagbanua1@gmail.com</li>
+        <li>📍 5701 Purok 5 Delima Belison Antique</li>
+      </ul>
+
+      <div class="section-title">Skills</div>
+      <ul class="skills">
+        <li>✔ Time Management</li>
+        <li>✔ Problem Solving</li>
+        <li>✔ Effective Communication</li>
+        <li>✔ Leadership<li>
+      </ul>
+
+      <div class="section-title">Languages</div>
+      <ul class="skills">
+        <li>Kinaray-a</li>
+      </ul>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+      <div class="right-section">
+        <h3>Profile</h3>
+        <p>
+         Detailed-oriented Office Administration graduate with strong organizational, communication, and technical skills developed through academic coursework and interships. With a solid educational bakcground in office management. I am well equipped to provide smooth office operations and handling administrative tasks with accuracy and confidentiality.
+        </p>
+      </div>
+
+      <div class="right-section">
+        <h3>ON THE JOB TRAINING</h3>
+
+        <div class="job">
+          <ul>
+            <li>Student Intern | Library of Antique Provincial Capitol</li>
+            <li>Participating in Inventroy Check</li>
+            <li>Shelving books, organizing returned items</li>
+            <li>Checking materials of visitors in and out</li>
+        </div>
+
+        <div class="right-section">
+          <h3>SEMINAR AND TRAINING ATTENTED</h3>
+
+          <div class="job">
+          <ul>
+            <li>Workplace Communication | Tesda Online Program | 2026</li>
+            <li>Professional Development Seminar Work Ethics and Business Etiquette | University of Antique | 2026</li>
+            <li>Receiving and Responding to Workplace Communication | Tesda Online Program | 2026</li>
+            <li>English for Business and Entreprenuership | Tesda Online Prpgram | 2026</li>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <h3>EDUCATION</h3>
+
+        <div class="education">
+          <h4>PRIMARY</h4>
+          <span>BOROC-BOROC DELIMA IPIL ELEMENTARY SCHOOL | 2012 - 2018</span>
+          <h4>SECONDARY</h4>
+          <span>BELISON NATIONAL SCHOOL | 2018 - 2022</span>
+          <ul>
+            <li>Junior High School | Basic Education Curriculum (BEC)</li>
+            <li>Senior High School | Humanities and Social Sciences (HUMSS)</li>
+          <h4>TERTIARY</h4>
+          <span>UNIVERSITY OF ANTIQUE</span>
+          <ul>
+          <li>Bachelor of Science in Office Administration | 2024 - Present</li>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <h3>LEADERSHIP & VOLUNTEERS EXPERIENCE</h3>
+
+        <div class="leadership">
+          <ul>
+            <li>Classroom PASOA Officer | University of Antique</li>
+            <li>Volunteer in School Community Outreach | Solong Sibalom Antique</li>
+            <li>Volunteer as a Participant in PASOA Skills Competition | Shorthand Writing Category | University of Antique</li>
+    </div>
+  </div>
+
+</body>
+</html>

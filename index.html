@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CapCut Login & Sign Up</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { height: 100vh; display: flex; justify-content: center; align-items: center; background: #0f0f0f; color: white; }
+.container { width: 850px; height: 500px; background: #1a1a1a; border-radius: 20px; overflow: hidden; display: flex; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.left { flex: 1; background: linear-gradient(135deg, #000, #2d2d2d); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; text-align: center; }
+.left h1 { font-size: 42px; margin-bottom: 15px; }
+.left p { font-size: 16px; opacity: 0.8; line-height: 1.5; }
+.right { flex: 1; background: white; color: black; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.tabs { display: flex; margin-bottom: 30px; }
+.tabs button { flex: 1; padding: 12px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; background: #f1f1f1; transition: 0.3s; }
+.tabs button.active { background: black; color: white; }
+form { display: flex; flex-direction: column; }
+input { margin-bottom: 15px; padding: 14px; border-radius: 10px; border: 1px solid #ccc; font-size: 15px; }
+.btn { padding: 14px; border: none; border-radius: 10px; background: black; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; }
+.btn:hover { background: #333; }
+.hidden { display: none; }
+.footer { margin-top: 15px; text-align: center; font-size: 14px; color: #666; }
+.error { color: red; font-size: 13px; margin-top: -10px; margin-bottom: 10px; display: none; text-align: center; }
+.success { color: green; font-size: 13px; margin-top: -10px; margin-bottom: 10px; display: none; text-align: center; }
+@media (max-width: 768px) {.container { width: 95%; height: auto; flex-direction: column; }.left,.right { width: 100%; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="left">
+    <h1>CapCut</h1>
+    <p>Create amazing videos with powerful editing tools. Login or Sign Up to continue your creative journey.</p>
+  </div>
+  <div class="right">
+    <div class="tabs">
+      <button class="active" onclick="showForm('login')">Login</button>
+      <button onclick="showForm('signup')">Sign Up</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" onsubmit="return checkLogin(event)">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <p id="errorMsg" class="error">Wrong email or password!</p>
+      <button type="submit" class="btn">Login</button>
+      <div class="footer">Forgot password?</div>
+    </form>
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" class="hidden" onsubmit="return handleSignup(event)">
+      <input type="text" id="signupName" placeholder="Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <p id="successMsg" class="success">Account created! You can now login.</p>
+      <p id="signupError" class="error"></p>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const loginForm = document.getElementById('loginForm');
+const signupForm = document.getElementById('signupForm');
+const buttons = document.querySelectorAll('.tabs button');
+
+// 2 DEFAULT ACCOUNTS + SIGNUP ACCOUNTS SAVED HERE
+let users = JSON.parse(localStorage.getItem('users')) || [
+  {name: "Yannah", email: "yannah@gmail.com", password: "1993", profile: "prof2.html"},
+  {name: "Trixie", email: "trixie@gmail.com", password: "200521", profile: "ppic.html"}
+];
+
+function showForm(type) {
+  if(type === 'login') {
+    loginForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
+    buttons[0].classList.add('active');
+    buttons[1].classList.remove('active');
+  } else {
+    signupForm.classList.remove('hidden');
+    loginForm.classList.add('hidden');
+    buttons[1].classList.add('active');
+    buttons[0].classList.remove('active');
+  }
+  document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'none';
+  document.getElementById('signupError').style.display = 'none';
+}
+
+// LOGIN - checks all users including signed up ones
+function checkLogin(e) {
+  e.preventDefault();
+  let email = document.getElementById('loginEmail').value.trim();
+  let password = document.getElementById('loginPassword').value;
+
+  let user = users.find(u => u.email === email && u.password === password);
+
+  if(user) {
+    alert("Welcome, " + user.name + "!");
+    window.location.href = user.profile;
+  } else {
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+// SIGNUP - adds new user, max 2 accounts
+function handleSignup(e) {
+  e.preventDefault();
+  let name = document.getElementById('signupName').value.trim();
+  let email = document.getElementById('signupEmail').value.trim();
+  let password = document.getElementById('signupPassword').value;
+  let errorEl = document.getElementById('signupError');
+
+  // Max 2 accounts for demo
+  if(users.length >= 2) {
+    errorEl.textContent = "Max 2 accounts lang. Delete one first in browser data.";
+    errorEl.style.display = 'block';
+    return false;
+  }
+
+  // Add new user - alternate profile pages
+  let profilePage = users.length === 0? "prof2.html" : "ppic.html";
+  users.push({name: name, email: email, password: password, profile: profilePage});
+
+  // Save to browser storage
+  localStorage.setItem('users', JSON.stringify(users));
+
+  // Show success + switch to login
+  document.getElementById('successMsg').style.display = 'block';
+  setTimeout(() => {
+    showForm('login');
+    document.getElementById('loginEmail').value = email;
+  }, 1500);
+
+  return false;
+}
+</script>
+</body>
+</html>

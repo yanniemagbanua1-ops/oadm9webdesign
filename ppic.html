@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapCut Profile</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #161722;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+   .capcut-profile {
+      background: #252837;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      padding: 24px;
+    }
+   .profile-top {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+   .profile-pic {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #00f5ff;
+      object-fit: cover;
+      margin: 0 auto 12px auto;
+    }
+   .username {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+   .username:hover {
+      text-decoration: underline;
+    }
+   .user-id {
+      color: #8a8b9c;
+      font-size: 14px;
+      margin: 4px 0 16px 0;
+    }
+   .profile-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 16px;
+    }
+   .stat {
+      text-align: center;
+    }
+   .stat strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+    }
+   .stat span {
+      font-size: 13px;
+      color: #8a8b9c;
+    }
+   .bio {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #e4e4e7;
+      margin-bottom: 20px;
+    }
+   .profile-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+   .btn {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      display: block;
+    }
+   .btn-follow {
+      background: #00f5ff;
+      color: #000;
+    }
+   .btn-follow.following {
+      background: #3a3d4d;
+      color: #fff;
+    }
+   .btn-message {
+      background: #3a3d4d;
+      color: #fff;
+    }
+   .tabs {
+      display: flex;
+      border-bottom: 1px solid #3a3d4d;
+      margin-bottom: 15px;
+    }
+   .tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #8a8b9c;
+      cursor: pointer;
+    }
+   .tab.active {
+      color: #fff;
+      border-bottom: 2px solid #00f5ff;
+    }
+   .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+   .video-item {
+      aspect-ratio: 9/16;
+      background: #3a3d4d;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+   .video-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+   .video-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+   .video-views {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      font-size: 12px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(0,0,0,0.5);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="capcut-profile">
+    <div class="profile-top">
+      <a href="https://www.capcut.com/@viral_editor" target="_blank">
+        <img src="ppic.jpeg"
+        alt="Profile Picture" class="profile-pic">
+      </a>
+      <a href="https://www.capcut.com/@viral_editor" target="_blank">
+        <h2 class="username">Trixie Anne Billones</h2>
+      </a>
+      <p class="user-id">@trixsiiii</p>
+    </div>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <strong>203</strong>
+        <span>Following</span>
+      </div>
+      <div class="stat">
+        <strong>3.8M</strong>
+        <span>Followers</span>
+      </div>
+      <div class="stat">
+        <strong>24.1M</strong>
+        <span>Likes</span>
+      </div>
+    </div>
+
+    <p class="bio">
+      Video Editor ✨<br>
+      Daily viral edits | Free templates<br>
+      📧 collab@viral-editor.com
+    </p>
+
+    <div class="profile-buttons">
+       <a href="capcutpro.html" target="_blank" class="btn btn-follow">Follow</a>
+      <a href="capcutpro.html" target="blank" class="btn btn-message" id="followBtn">Message</a>
+     
+    </div>
+
+    <div class="tabs">
+      <div class="tab active">Videos</div>
+      <div class="tab">Liked</div>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQuWT2Uk/" target="_blank">
+          <img src="pierce.jpg" alt="Video 1">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            15.2M
+          </div>
+        </a>
+      </div>
+
+      <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQuWEuUk/" target="_blank">
+          <img src="black.jpg" alt="Video 2">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            9.7M
+          </div>
+        </a>
+      </div>
+
+      <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQuWn1SR/" target="_blank">
+          <img src="shade.jpg" alt="video 3">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            6.4M
+          </div>
+        </a>
+      </div>
+
+      <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQu7Yw9e/" target="_blank">
+          <img src="pinky.jpg" alt="Video 4">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            4.1M
+          </div>
+        </a>
+      </div>
+        
+         <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQu7SJWn/" target="_blank">
+          <img src="cate.jpg" alt="Video 5">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>   
+
+            2.9M
+          </div>
+        </a>
+      </div>
+          
+          <div class="video-item">
+        <a href="https://vt.tiktok.com/ZSQuWT2Uk/" target="_blank">
+          <img src="cook.jpg" alt="Video 6">
+          <div class="video-views">
+            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>   
+
+            1.8M
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle follow button if you don't want it to redirect
+    const followBtn = document.getElementById('followBtn');
+    followBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      followBtn.classList.toggle('following');
+      followBtn.textContent = followBtn.classList.contains('following')? 'Following' : 'Follow';
+    });
+  </script>
+
+</body>
+</html>
